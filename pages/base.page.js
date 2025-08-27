@@ -4,7 +4,7 @@ export class basePage {
         await browser.url(path);
     }
 
-    async checkPage(title) {
+    async CheckPage(title) {
         await expect(browser).toHaveTitle(title)
     }
 

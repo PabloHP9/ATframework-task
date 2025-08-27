@@ -2,12 +2,11 @@ import { Given,When,Then } from "@wdio/cucumber-framework";
 import homePage from "../pages/home.page";
 import singInPage from "../pages/singIn.page";
 import logInPage from "../pages/logIn.page";
-import user from "../data/user.json"
 
 
 Given('I open practicesoftwaretesting.com', async () => {
     await homePage.openToolShop();
-    await homePage.checkHomePage();
+    await homePage.CheckHomePage();
 });
 
 Given('I am on the customer registration page', async () => {
@@ -17,17 +16,17 @@ Given('I am on the customer registration page', async () => {
 });
 
 When('I fill the registration fields with valid credentials', async () => {
-    await singInPage.fillFirstNameField(user.name1);
-    await singInPage.fillLastNameField(user.lastName1);
-    await singInPage.fillDateOfBirthField(user.dateOfBirth1);
-    await singInPage.fillstreetField(user.street1);
-    await singInPage.fillPostalCodeField(user.postalCode1);
-    await singInPage.fillCityField(user.city1);
-    await singInPage.fillStateField(user.state1);
+    await singInPage.fillFirstNameField('22323');
+    await singInPage.fillLastNameField('Doe');
+    await singInPage.fillDateOfBirthField('2000-10-31');
+    await singInPage.fillstreetField('reddor');
+    await singInPage.fillPostalCodeField(333333);
+    await singInPage.fillCityField('pisos picados');
+    await singInPage.fillStateField('solid');
     await singInPage.fillCountryField();
-    await singInPage.fillPhoneField(user.phone1);
+    await singInPage.fillPhoneField(1234567890);
     await singInPage.fillemailField();
-    await singInPage.fillPasswordField(user.password1);
+    await singInPage.fillPasswordField('Attask1#');
 });
 
 When('I fill the phone field with letters', async () => {
